@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
 st.set_page_config(page_title="AarShiv.ai Assistant", page_icon="🤖")
 st.title("🤖 AarShiv.ai Content Assistant")
@@ -15,7 +16,7 @@ mode = st.radio("Choose Assistant Mode", ["📢 Content Generator", "📸 Instag
 # ---------------------
 url = "https://api.groq.com/openai/v1/chat/completions"
 headers = {
-    "Authorization": "Bearer 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",  # Replace with your actual Groq API Key
+    "Authorization": f"Bearer {GROQ_API_KEY}",  # Replace with your actual Groq API Key
     "Content-Type": "application/json"
 }
 
